@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void invade_platoon(int *arr, int n, int w)
+void invade_platoon(int *arr, int n, int w) // 소대가 들어갈 자리를 판별하고, 넣는 함수
 {
     if (n > 1)
     {
@@ -52,7 +52,7 @@ void invade_platoon(int *arr, int n, int w)
     }
 }
 
-int count_platoon(void)
+int count_platoon(void) // 소대를 넣고 최종 반환 값을 계산함
 {
     int n, w, count, double_count;
     int *arr;

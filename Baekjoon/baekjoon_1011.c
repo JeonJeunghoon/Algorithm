@@ -2,25 +2,28 @@
 
 int main(void)
 {
-    int t, count;
-    double x, y, i, dis, temp;
+    int t, count, dis, max_dis, add_dis, four_idx;
+    double x, y;
     
     scanf("%d", &t);
     while (t--)
     {
         scanf("%lf %lf", &x, &y);
-        dis = 0;
-        temp = 1;
+        dis = (int)(y - x);
+        if (dis < 0)
+            return (0);
+        max_dis = 0;
+        add_dis = 1;
         count = 1;
-        while (dis < (y - x) / 2 && y - x != 1)
+        while (max_dis < (dis) / 2 && dis != 1)
         {
-            i = 4;
-            while (dis < (y - x) / 2 && i--)
+            four_idx = 4;
+            while (max_dis < (dis) / 2 && four_idx--)
             {
-                dis += temp;
+                max_dis += add_dis;
                 count++;
             }
-            temp++;
+            add_dis++;
         }
         printf("%d\n", count);
     }
